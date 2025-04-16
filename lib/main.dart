@@ -3,6 +3,7 @@
 // ignore_for_file: empty_constructor_bodies
 
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/bottom_nav_Bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: "title"),
+      home: const BottomNavigationBarExample(),
     );
   }
 }
