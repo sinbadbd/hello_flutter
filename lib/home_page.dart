@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/Utils/emotioncs_face.dart';
+import 'package:hello_flutter/exercise_title.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? Key}) : super(key: Key);
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     //Search Box
 
                     Container(
@@ -86,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
 
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
 
                     //How do you feel
                     const Row(
@@ -180,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       // expercise handle
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -193,38 +194,24 @@ class _HomePageState extends State<HomePage> {
                       ),
                       // List
                       const SizedBox(height: 20),
-                      Container(
-                        padding: EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: const Row(
-                          children: [
-                            Icon(Icons.favorite),
-                            SizedBox(width: 12),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Speaking Skills",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16),
-                                ),
-                                Text("16 Expericises")
-                              ],
-                            )
-                          ],
-                          /* children: [
-                            ListTile(
-                              leading: Icon(Icons.favorite),
-                              title: Text("Reading Speed"),
-                              subtitle: Text("12 expercises"),
-                            ),
-                          ],*/
-                        ),
-                      ),
+
+                      Expanded(
+                          child: ListView(
+                        children: const [
+                          ExcercisRow(
+                              icon: Icons.abc,
+                              title: "Speaking Skills",
+                              subTitle: "16 Exp..."),
+                          ExcercisRow(
+                              icon: Icons.g_mobiledata,
+                              title: "For other release channels",
+                              subTitle: "12.."),
+                          ExcercisRow(
+                              icon: Icons.kayaking,
+                              title: "Consider creating",
+                              subTitle: "12 ,,"),
+                        ],
+                      ))
                     ],
                   ),
                 ),
